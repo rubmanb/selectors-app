@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
   {
-    path:'selector',
-    loadChildren: () => import('../app/country/countries.module').then( m => m.CountriesModule)
+    path: 'selector',
+    loadChildren: () => import('./countries/countries.module').then( m => m.CountriesModule ),
   },
   {
-    path: '**', redirectTo: 'selector'
+    path: '**',
+    redirectTo: 'selector',
   }
+
 ];
 
 @NgModule({
